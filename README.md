@@ -8,7 +8,7 @@ This is the first project from the Udacity's React Nanodegree, here we put into 
 
 1. To install it: 
     
-    1.1 Clone this repo using ``` git clone ```
+    1.1 Clone this repo using ``` git clone https://github.com/juanmartin86/MyReads.git ```
 
     1.2 Go to the project's directory and install all the required packages using ``` npm install ``` 
     
