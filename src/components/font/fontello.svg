@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2017 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="star" unicode="&#xe800;" d="M741-118q-19 0-39 12l-213 121-215-121q-44-24-84 3-41 29-31 79l50 243q-10 9-39 35t-45 40l-99 90q-37 35-21 82t66 54l244 26 102 225q22 47 72 47 47 0 71-47l101-225 245-27q48-4 65-52t-21-83l-183-166 50-242q7-35-16-64t-60-30z m-425 343q-1-4-7-36t-17-84-20-92l190 107q27 14 52 0l190-107-44 213q-6 29 16 49l161 148-217 23q-30 4-41 30l-90 199-90-199q-13-26-43-30l-216-23 161-148q21-19 15-50z" horiz-adv-x="976" />
+
+<glyph glyph-name="star-filled" unicode="&#xe801;" d="M297 498q69 152 114 252 6 15 24 15t23-15l114-252q164-18 274-30 15-3 21-18t-6-27l-204-187q33-161 55-270 3-15-10-25t-27-2l-240 136q-144-81-240-136-15-9-28 2t-11 25l56 270q-122 112-204 187-12 11-6 26t21 19z" horiz-adv-x="869" />
+
+<glyph glyph-name="search" unicode="&#xe802;" d="M643 386q0 103-73 176t-177 74-177-74-73-176 73-177 177-73 177 73 73 177z m286-465q0-29-22-50t-50-21q-30 0-50 21l-191 191q-100-69-223-69-80 0-153 31t-125 84-84 125-31 153 31 152 84 126 125 84 153 31 153-31 125-84 84-126 31-152q0-123-69-223l191-191q21-21 21-51z" horiz-adv-x="928.6" />
+
+<glyph glyph-name="plus" unicode="&#xe803;" d="M729 454q44 0 74-31t31-73-31-73-74-30l-208 3 0-212q0-43-30-73t-75-31-73 31-30 73l3 212-212-3q-44 0-74 30t-30 73 30 73 74 31l212 0-3 209q0 42 30 73t73 31 75-31 30-73l0-209 208 0z" horiz-adv-x="834" />
+
+<glyph glyph-name="left-big" unicode="&#xe804;" d="M857 350v-71q0-30-18-51t-47-21h-393l164-164q21-20 21-50t-21-50l-42-43q-21-20-51-20-29 0-50 20l-364 364q-20 21-20 50 0 29 20 51l364 363q21 21 50 21 29 0 51-21l42-41q21-22 21-51t-21-51l-164-164h393q29 0 47-20t18-51z" horiz-adv-x="857.1" />
+
+<glyph glyph-name="down-dir" unicode="&#xe805;" d="M571 457q0-14-10-25l-250-250q-11-11-25-11t-25 11l-250 250q-11 11-11 25t11 25 25 11h500q14 0 25-11t10-25z" horiz-adv-x="571.4" />
+</font>
+</defs>
+</svg>

@@ -1,0 +1,634 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+@font-face {
+  font-family: "fontello";
+  src: url("components/font/fontello.eot?36011500");
+  src: url("components/font/fontello.eot?36011500#iefix") format("embedded-opentype"),
+       url("components/font/fontello.woff2?36011500") format("woff2"),
+       url("components/font/fontello.woff?36011500") format("woff"),
+       url("components/font/fontello.ttf?36011500") format("truetype"),
+       url("components/font/fontello.svg?36011500#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+ 
+.icon-star:before { content: "\e800"; } /* "" */
+.icon-star-filled:before { content: "\e801"; } /* "" */
+.icon-search:before { content: "\e802"; } /* "" */
+.icon-plus:before { content: "\e803"; } /* "" */
+.icon-left-big:before { content: "\e804"; } /* "" */
+.icon-down-dir:before { content: "\e805"; } /* '' */
+
+* {
+    font-family: "Nunito", sans-serif;
+}
+html, body, .root {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+}
+body, .app {
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+/* main page */
+
+.list-books-title {
+  padding: 10px 0;
+  background: linear-gradient(to right, #48cfad 5%, #3bafda 90%);
+  text-align: center;
+}
+.list-books-title h1 {
+  font-weight: 400;
+  margin: 0;
+  color: white;
+}
+
+.list-books-content {
+  padding: 0 0 80px;
+  flex: 1;
+}
+
+.bookshelf {
+  padding: 0 10px 20px;
+}
+
+@media (min-width: 600px) {
+  .bookshelf {
+    padding: 0 20px 40px;
+  }
+}
+
+.bookshelf-title {
+  border-bottom: 1px solid #dedede;
+}
+.bookshelf-books {
+  text-align: center;
+}
+
+.open-search {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+}
+.open-search a {
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #48cfad 5%, #3bafda 90%);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-size: 0;
+}
+.open-search a::after,
+.open-search a::before {
+  font-family: "fontello";
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #fff;
+  font-size: 19px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s linear, opacity 0.4s linear;
+}
+.open-search a::before {
+  content: "\e802";
+  opacity: 1;
+}
+.open-search a::after {
+  content: "\e803";
+  opacity: 0;
+}
+.open-search a:hover::before {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.open-search a:hover::after {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+/* search page */
+
+.search-books-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+}
+.search-books-input-wrapper {
+  flex: 1;
+  background: #e9e;
+}
+.search-books-bar input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.25em;
+  border: none;
+  outline: none;
+}
+
+.close-search {
+  position: relative;
+  display: block;
+  color: #fff;
+  width: 50px;
+  height: 57px;
+  background: linear-gradient(to right, #48cfad 5%, #3bafda 90%);
+  text-align: center;
+  line-height: 54px;
+  text-decoration: none;
+}
+.close-search i {
+  font-size: 1.3em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: 0.2s linear;
+  opacity: 1;
+}
+.close-search span {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s linear;
+}
+.close-search:hover i {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.close-search:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-books-results {
+  padding: 80px 10px 20px;
+}
+
+/* books grid */
+
+.books-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.books-grid li {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.book {
+  width: 140px;
+}
+.book-title,
+.book-authors {
+  font-size: 0.8em;
+}
+.book-title {
+  margin-top: 10px;
+}
+.book-authors {
+  color: #999;
+}
+
+.book-top {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.book-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #48cfad 5%, #3bafda 90%);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.book-shelf-changer::before {
+  position: absolute;
+  font-family: "fontello";
+  content: "\e805";
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+}
+.book-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* book cover */
+
+.book-cover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: #eee;
+}
+.book-cover-title {
+  padding: 20px 10px 0;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* Custom Styles */
+
+/* General Styles */
+
+.list-books {
+  background: #f7f7f7;
+}
+
+/* book overlay */
+
+.book-overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 193px;
+  background: rgba(0,0,0,0.6);
+  bottom: 0;
+  left: 0;
+}
+.book-overlay .shelf {
+  font-size: 0.85em;
+  text-transform: capitalize;
+  margin: 0;
+  transform: rotate(-45deg);
+  color: #fff;
+}
+.book-rating {
+  font-size: 0.8em;
+  color: grey;
+  margin-top: 5px;
+}
+
+/* Toggle Functionality */
+
+[id^="toggle-all"] {
+  display:none;
+}
+[id^="toggle-all"]:hover + label {
+  background: #005bbe;
+}
+[id^="toggle-all"] + label {
+  user-select: none;  
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  background: linear-gradient(#4285f4, #2775d1);
+  color: #fff;
+}
+
+.toggle-select {
+  margin: auto;
+}
+[id^="toggle-all"] ~ .toggle-select {
+  display: none;
+}
+
+[id^="toggle-all"]:checked ~ .toggle-select {
+  display: block;
+}
+
+.toggle-book {
+  display: none;
+}
+.toggle-book + .book-overlay {
+  display: none;
+}
+.toggle-book:checked + .book-overlay {
+  display: flex;
+}
+
+/* Modal */
+
+.modal-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; 
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.3);
+}
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 9999;
+  background: #f7f7f7;
+  max-width: 500px;
+  width: 100%;
+}
+.modal-container .row {
+  display: flex;
+}
+.modal-container .row:first-child {
+  background: linear-gradient(to right, #48cfad 5%, #3bafda 90%);
+  margin: -15px -15px 0 -15px;
+}
+.modal-container .left-part img {
+  margin-bottom: 10px;
+}
+.modal-container .title,
+.modal-container .subtitle {
+  margin: 0 0 5px;
+  line-height: 1.2;
+}
+.modal-container .title {
+  padding:  15px;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+}
+.modal-container .subtitle {
+  font-size: 0.9em;
+  font-style: italic;
+}
+.modal-container .description {
+  height: 200px;
+  text-align: justify;
+  word-spacing: -2px;
+  margin-top: 0;
+  overflow-y: auto;
+}
+.modal-container .left-part {
+  float: left;
+  align-items: center;
+}
+.modal-container .right-part {
+  float: right;
+  font-size: 0.8em;
+}
+.modal-container .left-part,
+.modal-container .right-part {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal-container .menu-details {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.modal-container .menu-details span,
+.modal-container .description-title {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Rating */
+
+.rating-group {
+  margin-top: 5px;
+  font-size: 0.7em;
+  padding-left: 0;
+  list-style: none;
+}
+.rating-group:after {
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.rating-group li {
+  width: 20%;
+  float: left;
+  padding: 0;
+  text-align: center;
+}
+.rating-group label {
+  display: block;
+}
+.rating-group input {
+  margin: 0;
+}
+
+/* Loading */
+.loading-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1010;
+}
+.loading-container .modal-overlay {
+  background: rgba(26, 188, 156, 0.76);
+}
+.sk-folding-cube {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 9999;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); 
+}
+.sk-folding-cube .sk-cube:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+          animation: sk-foldCubeAngle 2.4s infinite linear both;
+  -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+  -webkit-transform: scale(1.1) rotateZ(90deg);
+          transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+  -webkit-transform: scale(1.1) rotateZ(180deg);
+          transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+  -webkit-transform: scale(1.1) rotateZ(270deg);
+          transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; 
+}
+.sk-folding-cube .sk-cube4:before {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  } 
+}
+
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  }
+}
+
+/* Custom Buttons */
+
+.btn-custom {
+  display: inline-block;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  color: #fff;
+  background: #2073d4;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: 0.3s;
+  text-decoration: none;
+  text-align: center;
+}
+.btn-custom:hover {
+  background: #4a95ec;
+}
+.btn-more-info,
+.btn-close {
+  margin-top: 15px;
+}
+
+
+/* Ratings */
+
+.rating-group input {
+  display: none;
+}
+.rating-group li {
+  position: relative;
+}
+.rating-group li:before{
+  font-size: 1.2em;
+  font-family: "fontello";
+  content: "\e800";
+}
+.rating-group.not-rated:hover li:before,
+.rating-group li.star:before {
+  content: "\e801";
+    color: #ffd300;
+}
+.rating-group label {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  width: 28px;
+  height: 17px;
+  top: 0;
+}
+.rating-group.not-rated li:hover ~ li:before {
+  content: "\e800";
+  color: #000;
+}
+
+/* Media Queres */
+
+@media (max-width: 650px) {
+  .modal-container {
+    margin: 0;
+    overflow: auto;
+    height: 500px;
+  }
+  .modal-container .row {
+    display: block;
+  }
+  .modal-container .left-part,
+  .modal-container .right-part {
+    width: 100%;
+  }
+  .modal-container .left-part {
+    padding-top: 25px;
+  }
+  .modal-container .right-part {
+    text-align: center;
+  }
+}
