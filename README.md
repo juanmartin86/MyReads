@@ -16,7 +16,7 @@ This is the first project from the Udacity's React Nanodegree, here we put into 
     
     1.4 Enjoy and Have fun! 
 
-2. If you're too lazy to install it, just go to the [Deployed App on Heroku](https://juanmartin86-myreads.herokuapp.com/) 
+2. If you're too lazy to install it, just go to the [Deployed App on Heroku](https://juanmartin86-myreads.herokuapp.com/){:target="_blank"}
     
     2.1 Enjoy and Have fun! 
 
